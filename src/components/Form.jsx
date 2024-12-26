@@ -88,8 +88,7 @@ const FormCP = () => {
           body: JSON.stringify(data),
         }
       );
-      debugger;
-
+s
       const result = await res.json();
       if (res.ok) {
         setStatus(`File uploaded successfully! File ID: ${result.fileId}`);
