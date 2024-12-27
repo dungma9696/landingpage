@@ -1,7 +1,9 @@
 'use client';
 
+import { Link as LinkScroll } from 'react-scroll';
 import Image from 'next/image';
 import React, { useMemo } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import getScrollAnimation from '../utils/getScrollAnimation';
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
@@ -62,7 +64,7 @@ const EventCP = () => {
             variants={scrollAnimation}
           >
             <div className="">
-              <div className="flex gap-1 items-stretch justify-between">
+              <div className="flex flex-col sm:flex-row gap-1 items-stretch justify-between">
                 {steps.map((item, index) => (
                   <div
                     key={index}
@@ -81,17 +83,33 @@ const EventCP = () => {
                       <p>{item.text2}</p>
                       <p>{item.text3}</p>{' '}
                     </div>
+                    {index === 0 && (
+                      <LinkScroll
+                        to="form"
+                        spy={true}
+                        smooth={true}
+                        duration={1000}
+                        className="mt-8"
+                      >
+                        <ButtonPrimary>{item.btnText}</ButtonPrimary>
+                      </LinkScroll>
+                    )}
 
-                    {item.btnText && (
-                      <ButtonPrimary addClass="!w-fit">
-                        {item.btnText}
-                      </ButtonPrimary>
+                    {index !== 0 && item.btnText && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                      >
+                        <ButtonPrimary addClass="!w-fit">
+                          {item.btnText}
+                        </ButtonPrimary>
+                      </a>
                     )}
                   </div>
                 ))}
               </div>
 
-              <div className="text-center">
+              <div className="text-center mt-6">
                 <p>
                   * LƯU Ý: Học viên tải App ClassIn về Máy tính và điện thoại
                   trước khi tham gia Event để được tham gia các hoạt

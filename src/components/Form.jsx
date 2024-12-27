@@ -54,59 +54,84 @@ const FormCP = () => {
   const [plan, setPlan] = useState('');
   const [question, setQuestion] = useState('');
 
-  const handleSubmit = async (e) => {
-    debugger;
-    e.preventDefault();
+  // https://script.google.com/macros/s/AKfycbwdTqIMga6A7A8fILmqNnNgcF8HBBTDpE12c3Q4ZR3qHBIQnZ6nst9x4KeUgfU-FHr-zg/exec
+  // const handleSubmit = async (e) => {
+  //   debugger;
+  //   e.preventDefault();
 
-    const newForm = new FormData();
-    newForm.append('Name', name.trim());
-    newForm.append('Phone', phone.trim());
-    newForm.append('Email', email.trim());
-    newForm.append('Job', job.trim());
-    newForm.append('Plan', plan.trim());
-    newForm.append('Question', question.trim());
-    const data = {
-      Name: name.trim(),
-      Phone: phone.trim(),
-      Email: email.trim(),
-      Job: job.trim(),
-      Plan: plan.trim(),
-      Question: question.trim(),
-    };
+  //   const newForm = new FormData();
+  //   newForm.append('Name', name.trim());
+  //   newForm.append('Phone', phone.trim());
+  //   newForm.append('Email', email.trim());
+  //   newForm.append('Job', job.trim());
+  //   newForm.append('Plan', plan.trim());
+  //   newForm.append('Question', question.trim());
+  //   const data = {
+  //     Name: name.trim(),
+  //     Phone: phone.trim(),
+  //     Email: email.trim(),
+  //     Job: job.trim(),
+  //     Plan: plan.trim(),
+  //     Question: question.trim(),
+  //   };
 
-    try {
-      debugger;
+  //   try {
+  //     debugger;
 
-      const res = await fetch(
-        'https://script.google.com/macros/s/AKfycbwHazyVn31m1LJcvF8F23ai-8CiOhg8Ha-hOfCo1lP8Gi7-INQojDoU9JJjJJmIfMKPpw/exec',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          mode: 'cors',
-          body: JSON.stringify(data),
-        }
-      );
-s
-      const result = await res.json();
-      if (res.ok) {
-        setStatus(`File uploaded successfully! File ID: ${result.fileId}`);
-      } else {
-        setStatus(`Error: ${result.error}`);
-      }
-    } catch (error) {
-      setStatus(`Error: ${error.message}`);
-      debugger;
-    }
-  };
+  //     const res = await fetch(
+  //       'https://script.google.com/macros/s/AKfycbwHazyVn31m1LJcvF8F23ai-8CiOhg8Ha-hOfCo1lP8Gi7-INQojDoU9JJjJJmIfMKPpw/exec',
+  //       {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify(data),
+  //       }
+  //     );
+  //     debugger;
 
-  // action="https://script.google.com/macros/s/AKfycbwHazyVn31m1LJcvF8F23ai-8CiOhg8Ha-hOfCo1lP8Gi7-INQojDoU9JJjJJmIfMKPpw/exec"
+  //     const result = await res.json();
+  //     if (res.ok) {
+  //       setStatus(`File uploaded successfully! File ID: ${result.fileId}`);
+  //     } else {
+  //       setStatus(`Error: ${result.error}`);
+  //     }
+  //   } catch (error) {
+  //     setStatus(`Error: ${error.message}`);
+  //     debugger;
+  //   }
+  // };
+
+  // const checkData = async () => {
+  //   try {
+  //     const data = await fetch(
+  //       'https://script.google.com/macros/s/AKfycbzYtY5dzrztsCMEWE6vhHJ2INgwP2aQcTv11i87XPBCbcuqGIFod0_wUOB_6rO_dngkmA/exec',
+  //       {
+  //         redirect: 'follow',
+  //         method: 'POST',
+  //         body: `Name=aaaa&&&Age=bbb`,
+  //         // body: JSON.stringify({ Name: 'aaaa', Age: 'aaaa' }),
+  //         headers: {
+  //           'Content-Type': 'text/plain;charset=utf-8',
+  //         },
+  //       },
+  //     ).then(function (response) {
+  //       // Check if the request was successful
+  //       if (response) {
+  //         return response; // Assuming your script returns JSON response
+  //       } else {
+  //         throw new Error('Failed to submit the form.');
+  //       }
+  //     });
+  //   } catch (error) {
+  //     debugger;
+  //   }
+  // };
 
   return (
     <div
       className=" bg-gray-100"
-      id="gift"
+      id="form"
     >
       <div className=" max-w-screen-xl py-14  mt-8 px-6 sm:px-8 lg:px-16 mx-auto">
         <ScrollAnimationWrapper className="flex">
@@ -160,104 +185,114 @@ s
                     border="0"
                     style={{ display: 'none' }}
                   ></iframe>
-                  {/* <form
-                    method="POST"
-                    action={
-                      'https://script.google.com/macros/s/AKfycbwHazyVn31m1LJcvF8F23ai-8CiOhg8Ha-hOfCo1lP8Gi7-INQojDoU9JJjJJmIfMKPpw/exec'
-                    }
-                    target="hiddenFrame"
-                  > */}
-                  <div className="flex mb-4">
-                    <Input
-                      type="text"
-                      placeholder="Họ và Tên"
-                      className="grow"
-                      value={name}
-                      name={'Name'}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                    <Input
-                      type="text"
-                      placeholder="Số điện thoại"
-                      className="grow"
-                      name="Phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
-                  <Input
-                    name="Email"
-                    type="email"
-                    placeholder="Email"
-                    className="grow mb-4"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-
-                  <div className="mb-4">
-                    <Select
-                      className="!bg-[#FAFAF5]"
-                      onValueChange={(e) => {
-                        setJob(e);
-                      }}
-                      name="Job"
-                      value={job || undefined}
-                    >
-                      <SelectTrigger className="w-full !bg-[#FAFAF5]">
-                        <SelectValue
-                          placeholder="Bạn hiện đang làm gì"
-                          className="!bg-[#FAFAF5]"
-                        />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectItem value="Học sinh Cấp 2">
-                            Học sinh Cấp 2
-                          </SelectItem>
-                          <SelectItem value="Học sinh Cấp 3">
-                            Học sinh Cấp 3
-                          </SelectItem>
-                          <SelectItem value="Sinh viên">Sinh viên</SelectItem>
-                          <SelectItem value="Người đi làm">
-                            Người đi làm
-                          </SelectItem>
-                          <SelectItem value="Phụ huynh">Phụ huynh</SelectItem>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <Input
-                    name="Plan"
-                    type="text"
-                    placeholder="Bạn dự định thi IELTS khi nào?"
-                    className="grow mb-4"
-                    value={plan}
-                    onChange={(e) => setPlan(e.target.value)}
-                  />
-
-                  <Input
-                    name="Question"
-                    onChange={(e) => setQuestion(e.target.value)}
-                    value={question}
-                    type="text"
-                    placeholder="Bạn mong muốn được giải đáp vấn đề gì từ Diễn giả?"
-                    className="grow mb-4"
-                  />
-                  <p className="text-[14px]">
-                    Số lượng tham gia GIỚI HẠN chỉ 300 slot Miễn Phí!
-                  </p>
-                  <p className="text-[14px] text-yellow-400">
-                    Nhanh tay lên! Sự kiện sắp bắt đầu!
-                  </p>
-
-                  <ButtonPrimary
-                    onClick={handleSubmit}
-                    addClass="w-full"
+                  <form
+                  // method="POST"
+                  // onSubmit={(e) => {
+                  //   setTimeout(() => {
+                  //     setName('');
+                  //     setPhone('');
+                  //     setEmail('');
+                  //     setJob('');
+                  //     setPlan('');
+                  //     setQuestion('');
+                  //   }, 3000);
+                  // }}
+                  // action={
+                  //   'https://script.google.com/macros/s/AKfycbwHazyVn31m1LJcvF8F23ai-8CiOhg8Ha-hOfCo1lP8Gi7-INQojDoU9JJjJJmIfMKPpw/exec'
+                  // }
+                  // target="hiddenFrame"
                   >
-                    Submit
-                  </ButtonPrimary>
-                  {/* </form> */}
+                    <div className="flex mb-4">
+                      <Input
+                        type="text"
+                        placeholder="Họ và Tên"
+                        className="grow"
+                        value={name}
+                        name={'Name'}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                      <Input
+                        type="text"
+                        placeholder="Số điện thoại"
+                        className="grow"
+                        name="Phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
+                    </div>
+                    <Input
+                      name="Email"
+                      type="email"
+                      placeholder="Email"
+                      className="grow mb-4"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+
+                    <div className="mb-4">
+                      <Select
+                        className="!bg-[#FAFAF5]"
+                        onValueChange={(e) => {
+                          setJob(e);
+                        }}
+                        name="Job"
+                        value={job || undefined}
+                      >
+                        <SelectTrigger className="w-full !bg-[#FAFAF5]">
+                          <SelectValue
+                            placeholder="Bạn hiện đang làm gì"
+                            className="!bg-[#FAFAF5]"
+                          />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectGroup>
+                            <SelectItem value="Học sinh Cấp 2">
+                              Học sinh Cấp 2
+                            </SelectItem>
+                            <SelectItem value="Học sinh Cấp 3">
+                              Học sinh Cấp 3
+                            </SelectItem>
+                            <SelectItem value="Sinh viên">Sinh viên</SelectItem>
+                            <SelectItem value="Người đi làm">
+                              Người đi làm
+                            </SelectItem>
+                            <SelectItem value="Phụ huynh">Phụ huynh</SelectItem>
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <Input
+                      name="Plan"
+                      type="text"
+                      placeholder="Bạn dự định thi IELTS khi nào?"
+                      className="grow mb-4"
+                      value={plan}
+                      onChange={(e) => setPlan(e.target.value)}
+                    />
+
+                    <Input
+                      name="Question"
+                      onChange={(e) => setQuestion(e.target.value)}
+                      value={question}
+                      type="text"
+                      placeholder="Bạn mong muốn được giải đáp vấn đề gì từ Diễn giả?"
+                      className="grow mb-4"
+                    />
+                    <p className="text-[14px]">
+                      Số lượng tham gia GIỚI HẠN chỉ 300 slot Miễn Phí!
+                    </p>
+                    <p className="text-[14px] text-yellow-400">
+                      Nhanh tay lên! Sự kiện sắp bắt đầu!
+                    </p>
+
+                    <ButtonPrimary
+                      // onClick={handleSubmit}
+                      addClass="w-full"
+                    >
+                      Submit
+                    </ButtonPrimary>
+                  </form>
                   <p className="text-[12px] text-[#222222] opacity-70">
                     * Vui lòng để ý điện thoại, chúng tôi sẽ liên hệ bạn sớm
                     (trong vòng 24h )

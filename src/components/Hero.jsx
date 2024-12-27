@@ -1,5 +1,6 @@
 'use client';
 import React, { useMemo } from 'react';
+import { Link as LinkScroll } from 'react-scroll';
 import Image from 'next/image';
 import ButtonPrimary from './misc/ButtonPrimary';
 import { motion } from 'framer-motion';
@@ -50,7 +51,14 @@ const Hero = () => {
               </div>
             </div>
 
-            <ButtonPrimary>Giữ chỗ ngay</ButtonPrimary>
+            <LinkScroll
+              to="form"
+              spy={true}
+              smooth={true}
+              duration={1000}
+            >
+              <ButtonPrimary>Giữ chỗ ngay</ButtonPrimary>
+            </LinkScroll>
           </div>
           <div className="flex w-full">
             <motion.div
@@ -81,7 +89,9 @@ const Hero = () => {
                 HỌC IELTS CÓ KẾ HOẠCH + CHIẾN THUẬT THÔNG MINH bạn sẽ tiến nhanh
                 hơn x10
               </p>
-              <p className="inline sm:block">so với việc 'tự bơi' không được ai hướng dẫn!</p>
+              <p className="inline sm:block">
+                so với việc 'tự bơi' không được ai hướng dẫn!
+              </p>
             </div>
           </motion.div>
         </ScrollAnimationWrapper>

@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import React, { useMemo, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link as LinkScroll } from 'react-scroll';
+
 import getScrollAnimation from '../utils/getScrollAnimation';
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
 import ButtonPrimary from './misc/ButtonPrimary';
@@ -112,9 +114,17 @@ const Content = () => {
                   Vì chúng mình đã chuẩn bị rất nhiều BẤT NGỜ TUYỆT VỜI tặng
                   riêng người tham gia Event!
                 </p>
-                <p className='mb-4'>Số lượng có hạn, hãy đăng ký NGAY để không bỏ lỡ cơ hội</p>
-
-                <ButtonPrimary>Đăng ký ngay</ButtonPrimary>
+                <p className="mb-4">
+                  Số lượng có hạn, hãy đăng ký NGAY để không bỏ lỡ cơ hội
+                </p>
+                <LinkScroll
+                  to="form"
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                >
+                  <ButtonPrimary>Đăng ký ngay</ButtonPrimary>
+                </LinkScroll>
               </div>
             </div>
           </motion.div>

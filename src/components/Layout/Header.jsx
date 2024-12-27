@@ -1,13 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
-// Import react scroll
 import { Link as LinkScroll } from 'react-scroll';
 import ButtonOutline from '../misc/ButtonOutline.';
-import LogoVPN from '../../../public/assets/Logo.svg';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -108,16 +104,16 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
-              to="testimoni"
+              to="gift"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink('testimoni');
+                setActiveLink('gift');
               }}
               className={
                 'px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative' +
-                (activeLink === 'testimoni'
+                (activeLink === 'gift'
                   ? ' text-yellow-400 animation-active '
                   : ' text-black-500 hover:text-yellow-400 ')
               }
@@ -131,7 +127,14 @@ const Header = () => {
                   Sign In
               </a>
             </Link> */}
-            <ButtonOutline>Đăng ký ngay</ButtonOutline>
+            <LinkScroll
+              to="form"
+              spy={true}
+              smooth={true}
+              duration={1000}
+            >
+              <ButtonOutline>Đăng ký ngay</ButtonOutline>
+            </LinkScroll>
           </div>
         </nav>
       </header>
@@ -243,16 +246,16 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
-              to="testimoni"
+              to="gift"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink('testimoni');
+                setActiveLink('gift');
               }}
               className={
                 'mx-1 sm:mx-2 px-1 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all ' +
-                (activeLink === 'testimoni'
+                (activeLink === 'gift'
                   ? '  border-yellow-400 text-yellow-400'
                   : ' border-transparent ')
               }
@@ -261,7 +264,7 @@ const Header = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 64 64"
                 className="w-6 h-6"
-                fill={activeLink === 'testimoni' ? '#facc15' : '#0000000'}
+                fill={activeLink === 'gift' ? '#facc15' : '#0000000'}
               >
                 <path d="M 21 4 C 17.709968 4 15 6.7099679 15 10 C 15 11.480035 15.475387 12.896259 16.328125 14 L 8 14 C 6.895 14 6 14.895 6 16 L 6 22 L 58 22 L 58 16 C 58 14.895 57.105 14 56 14 L 47.589844 14 C 48.472908 12.913389 49 11.496062 49 10 C 49 6.7099679 46.290032 4 43 4 L 42.119141 4 L 41.523438 4.6503906 C 39.370516 7.0053824 36.70757 9.2523567 34.464844 11 L 29.535156 11 C 27.29243 9.2523567 24.629484 7.0053824 22.476562 4.6503906 L 21.880859 4 L 21 4 z M 20.429688 8.2304688 C 22.456004 10.319321 24.619146 12.20238 26.59375 13.761719 C 24.720228 13.596465 23.146961 13.339805 21.958984 12.966797 C 20.774603 12.594918 20.013074 12.127805 19.599609 11.683594 C 19.186144 11.239382 19 10.8304 19 10 C 19 9.0978916 19.629307 8.4900098 20.429688 8.2304688 z M 43.570312 8.2304688 C 44.370694 8.4900098 45 9.0978916 45 10 C 45 10.780533 44.814862 11.163616 44.347656 11.628906 C 43.88045 12.094196 43.021775 12.582887 41.777344 12.960938 C 40.632841 13.308628 39.132022 13.53323 37.482422 13.699219 C 39.439223 12.1503 41.569331 10.293204 43.570312 8.2304688 z M 8 24.037109 L 8 56 L 28 56 L 28 24.423828 L 8 24.037109 z M 36 24.576172 L 36 56 L 56 56 L 56 24.962891 L 36 24.576172 z" />
               </svg>
