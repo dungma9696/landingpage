@@ -50,10 +50,10 @@ const Content = () => {
 
   return (
     <div
-      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
       id="content"
+      className="bg__color--gray wrap-content"
     >
-      <div className="my-12">
+      <div className="max-w-[1320px]  px-2 sm:px-8 lg:px-16 mx-auto">
         <ScrollAnimationWrapper className="flex">
           <motion.div
             className="h-full w-full"
@@ -81,54 +81,51 @@ const Content = () => {
             </div>
           </motion.div>
         </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
-          <motion.div
-            className="flex flex-col items-end justify-center sm:mt-4 sm:mx-auto w-full lg:w-9/12"
-            variants={windowWidth > 800 ? scrollAnimation : undefined}
-          >
-            <div>
-              {steps.map((item, index) => (
-                <div
-                  key={`${index}-${item.time}`}
-                  className="flex sm:gap-4  items-center mb-4 w-full flex-col sm:flex-row"
-                >
-                  <p className="min-w-[80px]">{item.time}</p>
+        <div className="flex flex-col items-end justify-center sm:mt-4 sm:mx-auto w-full lg:w-9/12">
+          <div>
+            {steps.map((item, index) => (
+              <div
+                key={`${index}-${item.time}`}
+                className="flex sm:gap-4  items-center mb-4 w-full flex-col sm:flex-row"
+              >
+                <p className="min-w-[80px] text-black-600 font-bold">
+                  {item.time}
+                </p>
 
-                  <div className="bg-yellow-400 p-4 w-full rounded-md">
-                    <p>{item.title}</p>
-                    <div>
-                      {item.content.map((contentItem, indexContent) => (
-                        <div key={`${indexContent}-${contentItem}`}>
-                          {`- ${contentItem}`}
-                        </div>
-                      ))}
-                    </div>
+                <div className="bg-yellow-400 p-4 w-full rounded-md">
+                  <p className="text-black-600 font-bold">{item.title}</p>
+                  <div className="text-black-500">
+                    {item.content.map((contentItem, indexContent) => (
+                      <div key={`${indexContent}-${contentItem}`}>
+                        {`- ${contentItem}`}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
-              <div className="text-center mt-8">
-                <p className="text-[20px]">
-                  BẠN HOÀN TOÀN CÓ THỂ MONG ĐỢI NHIỀU HƠN!
-                </p>
-                <p className="">
-                  Vì chúng mình đã chuẩn bị rất nhiều BẤT NGỜ TUYỆT VỜI tặng
-                  riêng người tham gia Event!
-                </p>
-                <p className="mb-4">
-                  Số lượng có hạn, hãy đăng ký NGAY để không bỏ lỡ cơ hội
-                </p>
-                <LinkScroll
-                  to="form"
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                >
-                  <ButtonPrimary>Đăng ký ngay</ButtonPrimary>
-                </LinkScroll>
               </div>
+            ))}
+            <div className="text-center mt-8">
+              <p className="text-[20px]">
+                BẠN HOÀN TOÀN CÓ THỂ MONG ĐỢI NHIỀU HƠN!
+              </p>
+              <p className="">
+                Vì chúng mình đã chuẩn bị rất nhiều BẤT NGỜ TUYỆT VỜI tặng riêng
+                người tham gia Event!
+              </p>
+              <p className="mb-4">
+                Số lượng có hạn, hãy đăng ký NGAY để không bỏ lỡ cơ hội
+              </p>
+              <LinkScroll
+                to="form"
+                spy={true}
+                smooth={true}
+                duration={1000}
+              >
+                <ButtonPrimary>Đăng ký ngay</ButtonPrimary>
+              </LinkScroll>
             </div>
-          </motion.div>
-        </ScrollAnimationWrapper>
+          </div>
+        </div>
       </div>
     </div>
   );

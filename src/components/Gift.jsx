@@ -38,30 +38,24 @@ const steps = [
 const Gift = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsMobile(window.screen.width < 800);
-    }
-  }, []);
-
   return (
     <div
-      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
+      className="wrap-content"
       id="gift"
     >
-      <div className="my-12">
+      <div className="max-w-[1320px] px-2 sm:px-8 lg:px-16  w-full  mx-auto ">
         <ScrollAnimationWrapper className="flex">
           <motion.div
-            className="h-full w-full p-4"
+            className="h-full w-full"
             variants={scrollAnimation}
           >
             <div className="flex justify-end items-center">
               <div className="flex items-center text-left	">
                 <p className="text-9xl text-yellow-400">Q</p>
                 <div>
-                  <h2>Quà tặng hấp dẫn đang chờ bạn!</h2>
+                  <h2 className="text-xl sm:text-2xl">
+                    Quà tặng hấp dẫn đang chờ bạn!
+                  </h2>
                   <p>Tất cả đều được trao tặng hoàn toàn MIỄN PHÍ!</p>
                 </div>
               </div>
@@ -74,7 +68,7 @@ const Gift = () => {
               {steps.map((item, index) => (
                 <div
                   key={`${index}-${item.image}`}
-                  className="flex gap-4 items-center mb-4 w-full rounded-lg overflow-hidden border-solid border-2	border-[#E6E6E6] bg-[#FAFAF5]"
+                  className="flex flex-col gap-2 sm:flex-row sm:gap-4 items-center mb-4 w-full rounded-lg overflow-hidden border-solid border-2	border-[#E6E6E6] bg-[#FAFAF5]"
                 >
                   <Image
                     src={item.image}
@@ -82,38 +76,42 @@ const Gift = () => {
                     quality={100}
                     width={612}
                     height={383}
-                    className="w-[160px] h-auto"
+                    className="w-full sm:w-[160px] h-auto"
                   />
-                  <div className="flex p-[24px] justify-between w-full">
+                  <div className="p-2 sm:flex sm:p-[24px] justify-between w-full ">
                     <div>
-                      <p>{item.text1}</p>
-                      <p>{item.text2}</p>
-                      {item.text3 && <p>{item.text3}</p>}
-                      {item.text4 && <p>{item.text4}</p>}
+                      <p className="text-black-600">{item.text1}</p>
+                      <p className="text-black-600">{item.text2}</p>
+                      {item.text3 && (
+                        <p className="text-black-600">{item.text3}</p>
+                      )}
+                      {item.text4 && (
+                        <p className="text-black-600">{item.text4}</p>
+                      )}
                     </div>
 
-                    <p>{item.price}</p>
+                    <p className="text-right">{item.price}</p>
                   </div>
                 </div>
               ))}
             </div>{' '}
-            <div className="rounded-lg overflow-hidden border-solid border-2	border-[#E6E6E6] bg-[#FAFAF5] h-fit p-[24px]">
-              <p>Quà tặng bạn</p>
+            <div className="rounded-lg overflow-hidden border-solid border-2	border-[#E6E6E6] bg-[#FAFAF5] h-fit p-2 sm:p-[24px]">
+              <p className="text-black-600 font-bold">Quà tặng bạn</p>
               <div className="flex justify-between">
                 <span>Voucher thi thật IDP</span>
-                <span>300.000</span>
+                <span>300.000 VNĐ </span>
               </div>
               <div className="flex justify-between">
                 <span>Suất thi thử 4 kỹ năng</span>
-                <span>300.000</span>
+                <span>300.000 VNĐ</span>
               </div>
               <div className="flex justify-between">
                 <span>Khoá Sample Speaking</span>
-                <span>3.000.000</span>
+                <span>3.000.000 VNĐ</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between mb-2 sm:mb-[24px]">
                 <span>Tổng</span>
-                <span>3.600.000</span>
+                <span>3.600.000 VNĐ</span>
               </div>
 
               <LinkScroll

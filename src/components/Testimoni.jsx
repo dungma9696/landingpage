@@ -18,19 +18,24 @@ const Testimoni = ({
       ],
     },
     {
-      name: 'Mr. A',
-      role: 'Giám khảo kỳ cựu tại IDP',
-      image: '/assets/user.png',
+      name: 'Ms. Hà Linh',
+      role: 'Quản lý cấp cao IDP Việt Nam',
+      image: '/assets/user2.png',
       contents: [
-        '9.0 IELTS',
-        ' Hơn 10 năm kinh nghiệm chấm thi tại IDP Việt Nam',
+        'Quản lý cao cấp bộ phận phát triển bài thi IELTS khu vực miền Bắc',
+        'Hơn 10 năm kinh nghiệm trong lĩnh vực khảo thí quốc tế ',
+        'Diễn giả cho các sự kiện tại các trường đại học, THPT',
       ],
     },
     {
-      name: 'Mr. X',
+      name: 'Mr. Chuan Zhao',
       role: 'CEO ClassIn tại Trung Quốc',
-      image: '/assets/user.png',
-      contents: ['Thông tin sắp được hé lộ!'],
+      image: '/assets/user3.png',
+      contents: [
+        'Cựu Sinh viên Bắc Đại',
+        'Kinh nghiệm du học sinh Mỹ',
+        'Mới 2k đã làm CEO ClassIn - nền tảng hàng đầu về Công nghệ giảng dạy trực tuyến triển khai thành công tại hơn 160 quốc gia',
+      ],
     },
     {
       name: 'Ms. Ngọc Bích',
@@ -95,16 +100,16 @@ const Testimoni = ({
             <div className="transition-all p-2">
               <Image
                 src={item.image}
-                height={500}
-                width={500}
+                height={1500}
+                width={1500}
                 quality={100}
                 alt="Icon People"
                 className="w-full h-auto rounded-2xl"
               />
               <div className="text-[#505050] mt-2">
-                <p className="sm:text-[20px]">{item.name}</p>
-                <p className="sm:text-[20px]">{item.role}</p>
-                <ul>
+                <p className="sm:text-[20px] font-bold">{item.name}</p>
+                <p className="sm:text-[18px]">{item.role}</p>
+                <ul className="mt-1 sm:mt-2">
                   {item.contents.map((content, indexContent) => (
                     <li
                       key={indexContent}
@@ -125,8 +130,6 @@ const Testimoni = ({
             className="mx-4 flex items-center justify-center h-14 w-14 rounded-full bg-white border-yellow-400 border hover:bg-yellow-400 hover:text-white-500 transition-all text-yellow-400 cursor-pointer"
             onClick={sliderRef?.slickPrev}
           >
-            {/* <ArrowBack className="h-6 w-6 " /> */}
-
             <svg
               className="w-6 h-6"
               fill="none"

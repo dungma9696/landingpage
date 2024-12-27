@@ -3,23 +3,23 @@ import Image from 'next/image';
 
 const Book = () => {
   return (
-    <div className="max-w-screen-xl mt-24 px-8 xl:px-16 mx-auto">
-      <div className="flex py-6 sm:py-16">
-        <div className="w-[40%]">
+    <div className="wrap-content  hidden sm:block">
+      <div className="flex max-w-[1320px] px-2 sm:px-8 lg:px-16  w-full  mx-auto">
+        <div className="w-1/2">
           <Image
             src={'/assets/book.png'}
             alt="img"
             quality={100}
             width={612}
             height={383}
-            className="w-[160px] h-auto"
+            className="w-[420px] h-auto mx-auto"
           />
         </div>
 
-        <div className="grow">
+        <div className="w-1/2">
           <div className="flex items-center text-left	">
-            <p className="text-9xl text-yellow-400">C</p>
-            <div>
+            <p className="text-9xl text-yellow-400">S</p>
+            <div className="text-black-600 font-bold text-2xl">
               <p>SỰ KIỆN về IELTS hội tụ nhiều thông tin</p>
               <p>HOT nhất hiện nay sắp bắt đầu!</p>
             </div>
@@ -30,6 +30,15 @@ const Book = () => {
             thật sự hiệu quả, đã giúp Tactics chắp cánh ước mơ cho hàng ngàn Học
             viên thành công chinh phục mục tiêu 6.5 - 7.0 - 8.0 IELTS nhé!
           </p>
+
+          <Image
+            src={'/assets/hoc-vien.png'}
+            alt="img"
+            quality={100}
+            width={612}
+            height={383}
+            className="w-full h-auto"
+          />
         </div>
       </div>
     </div>

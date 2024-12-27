@@ -121,6 +121,20 @@ li.check:before {
   }
 }
 
+.bg__color--gray {
+  background-color: #ecf0f454;
+}
+
+.wrap-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media screen and (max-width: 769px) {
+  .wrap-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
 @layer base {
   * {
     @apply border-border;

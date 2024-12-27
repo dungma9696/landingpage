@@ -40,85 +40,81 @@ const EventCP = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
-    <div className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto">
-      <div className="my-12">
+    <div className="bg__color--gray wrap-content">
+      <div className="max-w-[1320px] px-2 sm:px-8 lg:px-16  w-full  mx-auto">
         <ScrollAnimationWrapper className="flex">
           <motion.div
-            className="h-full w-full p-4"
+            className="h-full w-full"
             variants={scrollAnimation}
           >
             <div className="flex items-center">
               <div className="flex items-center text-left	">
                 <p className="text-9xl text-yellow-400">T</p>
-                <div>
-                  <h2>Tham gia sự kiện với 3 bước đơn giản,</h2>
-                  <p>nhanh chóng</p>
+                <div className="text-xl sm:text-2xl text-black-600">
+                  <p className="inline sm:block pr-1">
+                    Tham gia sự kiện với 3 bước đơn giản,
+                  </p>
+                  <p className="inline sm:block">nhanh chóng</p>
                 </div>
               </div>
             </div>
           </motion.div>
         </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
-          <motion.div
-            className="h-full w-full p-4"
-            variants={scrollAnimation}
-          >
-            <div className="">
-              <div className="flex flex-col sm:flex-row gap-1 items-stretch justify-between">
-                {steps.map((item, index) => (
-                  <div
-                    key={index}
-                    className="text-center flex flex-col justify-between items-center"
-                  >
-                    <div>
-                      <Image
-                        src={item.image}
-                        alt="img"
-                        quality={100}
-                        height={700}
-                        width={700}
-                        className="w-full h-[260px]"
-                      />
-                      <p>{item.text1}</p>
-                      <p>{item.text2}</p>
-                      <p>{item.text3}</p>{' '}
-                    </div>
-                    {index === 0 && (
-                      <LinkScroll
-                        to="form"
-                        spy={true}
-                        smooth={true}
-                        duration={1000}
-                        className="mt-8"
-                      >
-                        <ButtonPrimary>{item.btnText}</ButtonPrimary>
-                      </LinkScroll>
-                    )}
 
-                    {index !== 0 && item.btnText && (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                      >
-                        <ButtonPrimary addClass="!w-fit">
-                          {item.btnText}
-                        </ButtonPrimary>
-                      </a>
-                    )}
-                  </div>
-                ))}
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-1 items-stretch justify-between">
+          {steps.map((item, index) => (
+            <div
+              key={index}
+              className="text-center flex flex-col justify-between items-center"
+            >
+              <div>
+                <Image
+                  src={item.image}
+                  alt="img"
+                  quality={100}
+                  height={700}
+                  width={700}
+                  className="w-full h-[260px]"
+                />
+                <p className="font-bold">{item.text1}</p>
+                <p>{item.text2}</p>
+                <p>{item.text3}</p>{' '}
               </div>
+              {index === 0 && (
+                <LinkScroll
+                  to="form"
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  className="mt-2 sm:mt-8"
+                >
+                  <ButtonPrimary>{item.btnText}</ButtonPrimary>
+                </LinkScroll>
+              )}
 
-              <div className="text-center mt-6">
-                <p>
-                  * LƯU Ý: Học viên tải App ClassIn về Máy tính và điện thoại
-                  trước khi tham gia Event để được tham gia các hoạt
-                </p>
-                <p>động thực hành trực tiếp theo hướng dẫn từ chuyên gia. </p>
-              </div>
+              {index !== 0 && item.btnText && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                >
+                  <ButtonPrimary addClass="!w-fit mt-4">
+                    {item.btnText}
+                  </ButtonPrimary>
+                </a>
+              )}
             </div>
-          </motion.div>
-        </ScrollAnimationWrapper>
+          ))}
+        </div>
+
+        <div className="text-center mt-6 italic">
+          <p className="inline sm:block pr-1">
+            * LƯU Ý: Học viên tải App ClassIn về Máy tính và điện thoại trước
+            khi tham gia Event để được tham gia các hoạt
+          </p>
+          <p className="inline sm:block">
+            động thực hành trực tiếp theo hướng dẫn từ chuyên gia.{' '}
+          </p>
+        </div>
       </div>
     </div>
   );

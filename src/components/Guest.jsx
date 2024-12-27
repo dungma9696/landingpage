@@ -23,11 +23,11 @@ const Guest = () => {
 
   return (
     <div
-      className="bg-[#ffffff]  w-full "
+      className="w-full wrap-content"
       id="guest"
     >
-      <div className="max-w-screen-xl  px-6 sm:px-8 mx-auto flex flex-col w-full text-center justify-center">
-        <ScrollAnimationWrapper className="w-full flex flex-col sm:py-12">
+      <div className="max-w-[1320px]  px-2 sm:px-8 mx-auto flex flex-col w-full text-center justify-center">
+        <ScrollAnimationWrapper className="w-full flex flex-col ">
           <motion.div variants={scrollAnimation}>
             <div>
               <div className="flex justify-end items-center">
@@ -50,11 +50,12 @@ const Guest = () => {
           </motion.div>
         </ScrollAnimationWrapper>
       </div>
-      <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
-        <ScrollAnimationWrapper className="w-full flex flex-col py-12">
+      <div className=""></div>
+      <div className="max-w-[1320px]  px-2 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
+        <ScrollAnimationWrapper className="w-full flex flex-col">
           <motion.div variants={scrollAnimation}>
             <div>
-              <div className="flex items-center">
+              <div className="flex items-center mt-8">
                 <div className="flex items-center text-left	">
                   <p className="text-8xl sm:text-9xl text-yellow-400">5</p>
                   <div className="">

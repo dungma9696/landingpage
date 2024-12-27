@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Link as LinkScroll } from 'react-scroll';
 import ButtonOutline from '../misc/ButtonOutline.';
+import { NAMES } from './data';
+import { toast } from 'sonner';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -15,6 +17,18 @@ const Header = () => {
         setScrollActive(window.scrollY > 20);
       });
     }
+    setTimeout(() => {
+      const randomNumber = Math.floor(Math.random() * 101);
+      toast.success(`${NAMES[randomNumber]} vừa đăng ký thành công!`);
+    }, 5000);
+    const intervalID = setInterval(function () {
+      const randomNumber = Math.floor(Math.random() * 101);
+      toast.success(`${NAMES[randomNumber]} vừa đăng ký thành công!`);
+    }, 60000);
+
+    return () => {
+      clearInterval(intervalID);
+    };
   }, []);
   return (
     <>
@@ -26,7 +40,7 @@ const Header = () => {
       >
         <div
           className={
-            'max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto text-sm flex gap-2 justify-between sm:justify-start' +
+            'max-w-[1320px] px-2 sm:px-8 lg:px-16 mx-auto text-sm flex gap-2 justify-between sm:justify-start' +
             (scrollActive ? ' hidden sm:flex' : 'p-0')
           }
         >
@@ -34,7 +48,7 @@ const Header = () => {
           <span className="hidden sm:block">|</span>
           <span>center.ieltstactics@gmail.com</span>
         </div>
-        <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
+        <nav className="max-w-[1320px] px-2 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
           <div className="col-start-1 col-end-2 flex items-center">
             <Image
               src="/assets/logo-ielts-tactics.png"
@@ -140,8 +154,8 @@ const Header = () => {
       </header>
       {/* Mobile Navigation */}
 
-      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t ">
-        <div className="bg-white-500 sm:px-3">
+      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-0 sm:px-8 shadow-t ">
+        <div className="bg-white-500 px-2 sm:px-3">
           <ul className="flex w-full justify-between items-center text-black-500">
             <LinkScroll
               activeClass="active"
