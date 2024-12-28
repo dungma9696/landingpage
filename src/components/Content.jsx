@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
-import React, { useMemo, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useMemo } from 'react';
 import { Link as LinkScroll } from 'react-scroll';
 
 import getScrollAnimation from '../utils/getScrollAnimation';
@@ -14,7 +14,8 @@ const steps = [
     time: '20:00 PM',
     title: 'LÀM QUEN CÁC “NGÔI SAO” - Mở Ra Thế Giới IELTS Hiện Đại',
     content: [
-      'Gặp gỡ Giám khảo IDP và các chuyên gia hàng đầu từ ClassIn và IELTS Tactics.',
+      'Đối thoại cùng Chuyên gia IDP vững hành trang đi thi năm 2025',
+      'Gặp gỡ Cựu sinh viên Đại học Bắc Kinh Trung Quốc  (top 1% talent Trung Quốc), Chuyên gia IELTS Tactics',
       'Thảo luận về những rào cản thường gặp khi học IELTS và cách vượt qua chúng hiệu quả',
     ],
   },
@@ -22,7 +23,7 @@ const steps = [
     time: '20:20 PM',
     title: 'THỰC CHIẾN - Chiến Thuật Nâng Band Đỉnh Cao',
     content: [
-      'Trực tiếp trải nghiệm và lắng nghe phân tích sample pronunciation từ Giám khảo IDP',
+      'Trực tiếp trải nghiệm và lắng nghe phân tích sample pronunciation từ Chuyên gia',
       'Trải nghiệm luyện thi IELTS trên ClassIn với chiến thuật thông minh giúp cải thiện nhanh chóng',
       'Phân tích bài Speaking Band 8+ cùng chuyên gia để hiểu cách học và áp dụng kỹ thuật làm bài thực chiến.',
     ],
@@ -31,7 +32,7 @@ const steps = [
     time: '21:20 PM',
     title: 'Q&A - Hỏi Đáp Chuyên Sâu & Quà Tặng Giá Trị',
     content: [
-      'Đặt câu hỏi trực tiếp và nhận lời khuyên từ Giám khảo IDP, CEO ClassIn và Trường phòng Đào tạo IELTS Tactics.',
+      'Đặt câu hỏi trực tiếp và nhận lời khuyên từ Quản lý cấp cao IDP, CEO ClassIn và Đại diện IELTS Tactics.',
       'Nhận ngay các phần quà đặc biệt: Voucher giảm giá lệ phí thi tại IDP, khoá luyện Speaking Forecast 8.0+ hoàn toàn Miễn Phí...',
     ],
   },
@@ -39,14 +40,6 @@ const steps = [
 
 const Content = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Now you can safely use `window`
-      setWindowWidth(window.innerWidth);
-    }
-  }, []);
 
   return (
     <div

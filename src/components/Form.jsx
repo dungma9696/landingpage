@@ -8,7 +8,8 @@ import { toast } from 'sonner';
 import getScrollAnimation from '../utils/getScrollAnimation';
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
 import ButtonPrimary from './misc/ButtonPrimary';
-
+import { ModalCP } from '@/components/ui/modal/ModalCP';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import {
   Select,
   SelectContent,
@@ -18,35 +19,15 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-const steps = [
-  {
-    image: '/assets/gift1.png',
-    text1: 'Voucher giảm lệ phí thi IELTS tại IDP',
-    text2: 'Giới hạn chỉ 100 voucher',
-    text3: 'Chỉ còn: 15',
-    text4: '',
-    price: '300.000 VNĐ',
-  },
-  {
-    image: '/assets/gift2.png',
-    text1: 'Thẻ thi thử IELTS 4 kỹ năng miễn phí',
-    text2: 'Giới hạn 300 thẻ',
-    text3: 'Chỉ còn: 21',
-    text4: '',
-    price: '300.000 VNĐ',
-  },
-  {
-    image: '/assets/gift3.png',
-    text1: 'Khoá Sample Speaking Forecast band 8.0+ với Ai',
-    text2: 'Tặng toàn bộ khách tham gia',
-    text3: '',
-    text4: 'Chỉ tặng trong  sự kiện',
-    price: '3.000.000 VNĐ',
-  },
-];
-
 const FormCP = () => {
-  const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+  const isPc = useMediaQuery('(min-width: 768px)');
+  const scrollAnimation = useMemo(
+    () => getScrollAnimation(isPc ? 150 : 50),
+    [isPc]
+  );
+
+  const [open, setOpen] = useState(false);
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -104,7 +85,7 @@ const FormCP = () => {
           setPlan('');
           setQuestion('');
           setLoading(false);
-
+          setOpen(true);
           return response; // Assuming your script returns JSON response
         } else {
           setLoading(false);
@@ -121,7 +102,7 @@ const FormCP = () => {
 
   return (
     <div
-      className=" bg__color--gray wrap-content"
+      className=" bg__color--gray wrap-content  sm:pt-[100px]"
       id="form"
     >
       <div className="max-w-[1320px] px-2 sm:px-8 lg:px-16  w-full  mx-auto">
@@ -311,6 +292,10 @@ const FormCP = () => {
           </motion.div>
         </ScrollAnimationWrapper>
       </div>
+      <ModalCP
+        open={open}
+        setOpen={setOpen}
+      />
     </div>
   );
 };

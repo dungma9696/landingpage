@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-import React, { useMemo, useEffect, useState } from 'react';
-import { Link as LinkScroll } from 'react-scroll';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useMemo } from 'react';
+import { Link as LinkScroll } from 'react-scroll';
 import getScrollAnimation from '../utils/getScrollAnimation';
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
 import ButtonPrimary from './misc/ButtonPrimary';
@@ -40,7 +40,7 @@ const Gift = () => {
 
   return (
     <div
-      className="wrap-content"
+      className="wrap-content !pt-[66px] sm:!pt-[94px] "
       id="gift"
     >
       <div className="max-w-[1320px] px-2 sm:px-8 lg:px-16  w-full  mx-auto ">
@@ -120,7 +120,9 @@ const Gift = () => {
                 smooth={true}
                 duration={1000}
               >
-                <ButtonPrimary>GIỮ CHỖ NHẬN ƯU ĐÃI</ButtonPrimary>
+                <ButtonPrimary addClass={'w-full'}>
+                  GIỮ CHỖ NHẬN ƯU ĐÃI
+                </ButtonPrimary>
               </LinkScroll>
             </div>
           </div>

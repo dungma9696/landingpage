@@ -14,7 +14,7 @@ const Header = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () => {
-        setScrollActive(window.scrollY > 20);
+        setScrollActive(window.scrollY > 10);
       });
     }
     setTimeout(() => {
@@ -34,14 +34,14 @@ const Header = () => {
     <>
       <header
         className={
-          'fixed top-0 w-full  z-30 bg-white-500 transition-all ' +
-          (scrollActive ? ' shadow-md pt-0' : ' pt-4')
+          'fixed top-0 w-full  z-30 bg-white-500 transition-all pt-4 ' +
+          (scrollActive ? ' shadow-md ' : '')
         }
       >
         <div
           className={
             'max-w-[1320px] px-2 sm:px-8 lg:px-16 mx-auto text-sm flex gap-2 justify-between sm:justify-start ' +
-            (scrollActive ? ' hidden sm:flex' : 'p-0')
+            (scrollActive ? ' hidden sm:flex' : '')
           }
         >
           <span>Hotline: 094 965 8894</span>

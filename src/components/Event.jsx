@@ -21,7 +21,7 @@ const steps = [
   {
     image: '/assets/event/event2.png',
     text1: 'Bước 2',
-    text2: 'Tải app Class trước để',
+    text2: 'Tải app ClassIn trước để',
     text3: 'tham gia sự kiện',
     btnText: 'TẢI APP',
     link: 'https://www.classin.com/download/',

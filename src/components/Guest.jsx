@@ -3,9 +3,6 @@
 import React, { useMemo } from 'react';
 import Image from 'next/image';
 import Testimoni from './Testimoni';
-import ButtonPrimary from './misc/ButtonPrimary';
-import ButtonOutline from './misc/ButtonOutline.';
-import Maps from '../../public/assets/HugeGlobal.svg';
 import { motion } from 'framer-motion';
 import getScrollAnimation from '../utils/getScrollAnimation';
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
@@ -23,7 +20,7 @@ const Guest = () => {
 
   return (
     <div
-      className="w-full wrap-content"
+      className="w-full wrap-content !pt-[66px] sm:!pt-[94px]"
       id="guest"
     >
       <div className="max-w-[1320px]  px-2 sm:px-8 mx-auto flex flex-col w-full text-center justify-center">

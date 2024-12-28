@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev --turbopack --port=3030",
+    "dev": "NODE_OPTIONS='--inspect' next dev --turbopack",
     "build": "next build",
-    "start": "next start --port=3030",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-select": "^2.1.4",
     "@radix-ui/react-slot": "^1.1.1",
     "autoprefixer": "^10.4.20",

@@ -11,7 +11,7 @@ const Testimoni = ({
     {
       name: 'Ms. Thuỳ Dương',
       role: 'MC chương trình',
-      image: '/assets/user1.png',
+      image: '/assets/user1.jpg',
       contents: [
         '7.0 IELTS Overall (7.5 Speaking)',
         'Tốt nghiệp bằng xuất sắc Học viện Ngoại Giao. Từng thực tập tại Vụ Đối Ngoại Văn phòng Quốc Hội.',
@@ -29,18 +29,19 @@ const Testimoni = ({
     },
     {
       name: 'Mr. Chuan Zhao',
-      role: 'CEO ClassIn tại Trung Quốc',
+      role: 'CEO ClassIn - thị trường Việt Nam',
       image: '/assets/user3.png',
       contents: [
         'Cựu Sinh viên Bắc Đại',
         'Kinh nghiệm du học sinh Mỹ',
         'Mới 2k đã làm CEO ClassIn - nền tảng hàng đầu về Công nghệ giảng dạy trực tuyến triển khai thành công tại hơn 160 quốc gia',
+        'ClassIn là nền tảng dạy trực tuyến kết hợp AI số 1 ở TQ',
       ],
     },
     {
       name: 'Ms. Ngọc Bích',
       role: 'Trưởng phòng QLHV IELTS Tactics',
-      image: '/assets/user4.png',
+      image: '/assets/user4.jpg',
       contents: [
         'Tốt nghiệp trường Đại học Hà Nội, chuyên ngành Ngôn Ngữ Anh',
         'Chứng chỉ C1 khung tham chiếu Châu Âu (HANU Test)',

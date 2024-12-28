@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <Toaster
         position="top-right"
         toastOptions={{
-          className: 'bg-yellow-400 text-white-500 sm:text-xl',
+          className: 'bg-orange-500 text-white-500 sm:text-xl',
         }}
       />
     </>
