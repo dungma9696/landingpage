@@ -40,7 +40,7 @@ const Header = () => {
       >
         <div
           className={
-            'max-w-[1320px] px-2 sm:px-8 lg:px-16 mx-auto text-sm flex gap-2 justify-between sm:justify-start' +
+            'max-w-[1320px] px-2 sm:px-8 lg:px-16 mx-auto text-sm flex gap-2 justify-between sm:justify-start ' +
             (scrollActive ? ' hidden sm:flex' : 'p-0')
           }
         >
