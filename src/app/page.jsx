@@ -14,7 +14,7 @@ export const metadata = {
 
   openGraph: {
     images: [
-      `https://www.ieltstactics.dotphaband75.vn/assets/logo-ielts-tactics.png`,
+      `https://ieltstactics.dev-viet.online/assets/logo-ielts-tactics.png`,
     ],
     type: 'website',
     siteName: 'ieltstactics',
