@@ -11,7 +11,7 @@ const Testimoni = ({
     {
       name: 'Ms. Thuỳ Dương',
       role: 'MC chương trình',
-      image: '/assets/user1.jpg',
+      image: '/assets/user11.jpg',
       contents: [
         '7.0 IELTS Overall (7.5 Speaking)',
         'Tốt nghiệp bằng xuất sắc Học viện Ngoại Giao. Từng thực tập tại Vụ Đối Ngoại Văn phòng Quốc Hội.',
@@ -20,7 +20,7 @@ const Testimoni = ({
     {
       name: 'Ms. Hà Linh',
       role: 'Quản lý cấp cao IDP Việt Nam',
-      image: '/assets/user2.jpg',
+      image: '/assets/user41.jpg',
       contents: [
         'Quản lý cao cấp bộ phận phát triển bài thi IELTS khu vực miền Bắc',
         'Hơn 10 năm kinh nghiệm trong lĩnh vực khảo thí quốc tế ',
@@ -30,7 +30,7 @@ const Testimoni = ({
     {
       name: 'Mr. Chuan Zhao',
       role: 'CEO ClassIn - thị trường Việt Nam',
-      image: '/assets/user3.jpg',
+      image: '/assets/user31.jpg',
       contents: [
         'Cựu Sinh viên Bắc Đại',
         'Kinh nghiệm du học sinh Mỹ',
@@ -41,7 +41,7 @@ const Testimoni = ({
     {
       name: 'Ms. Ngọc Bích',
       role: 'Trưởng phòng QLHV IELTS Tactics',
-      image: '/assets/user4.jpg',
+      image: '/assets/user21.jpg',
       contents: [
         'Tốt nghiệp trường Đại học Hà Nội, chuyên ngành Ngôn Ngữ Anh',
         'Chứng chỉ C1 khung tham chiếu Châu Âu (HANU Test)',
