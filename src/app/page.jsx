@@ -8,9 +8,10 @@ import Hero from '../components/Hero';
 import TextFooter from '../components/TextFooter';
 
 export const metadata = {
-  title: 'Online Workshop - Chiến thuật IELTS thông minh cùng Giám khảo IDP',
+  title:
+    'Workshop Chiến thuật tăng điểm IELTS cùng Quản lý cấp cao IDP và Cựu SV Bắc Đại',
   description:
-    'Tham gia Online Workshop "Tactics with IELTS Tactics" để khám phá chiến thuật nâng band IELTS cấp tốc, gặp Giám khảo IDP kỳ cựu & Cựu SV Bắc Đại. Đăng ký ngay!',
+    'Tham gia Online Workshop "Đột phá Band 7.5" để khám phá CHIẾN LƯỢC TĂNG ĐIỂM NGAY LẬP TỨC, gặp gỡ Chuyên gia IDP & Cựu SV Bắc Đại. Đăng ký ngay!',
 
   openGraph: {
     images: [

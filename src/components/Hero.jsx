@@ -20,13 +20,43 @@ const Hero = () => {
       >
         <ScrollAnimationWrapper>
           <motion.div
-            className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 sm:gap-8 py-6 sm:py-16"
+            className="flex flex-col-reverse sm:flex-row sm:gap-8 py-6 sm:py-16"
             variants={isPc ? scrollAnimation : undefined}
           >
             <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1 sm:items-start">
-              <h1 className="text-xl font-medium text-black-600 leading-normal bg-yellow-300 rounded-full p-2">
-                Online Workshop
-              </h1>
+              <div className="flex items-center gap-4 sm:gap-[20px] sm:flex-row flex-col mt-4">
+                <h1 className="text-xl font-medium text-black-600 leading-normal bg-yellow-300 rounded-full p-2">
+                  Online Workshop
+                </h1>
+
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/assets/logo/logo-ielts-tactics.png"
+                    alt="user"
+                    quality={100}
+                    width={612}
+                    height={383}
+                    className="h-11 w-auto"
+                  />
+                  <Image
+                    src="/assets/logo/logo-idp.png"
+                    alt="user"
+                    quality={100}
+                    width={612}
+                    height={383}
+                    className="h-11 w-auto"
+                  />
+                  <Image
+                    src="/assets/logo/logo-classin.png"
+                    alt="user"
+                    quality={100}
+                    width={612}
+                    height={383}
+                    className="h-14 w-auto"
+                  />
+                </div>
+              </div>
+
               {/* <h1 className="text-2xl mt-2 lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal ">
                 Tactics with IELTS Tactics
               </h1> */}
@@ -70,14 +100,14 @@ const Hero = () => {
                 <ButtonPrimary>Giữ chỗ ngay</ButtonPrimary>
               </LinkScroll>
             </div>
-            <div className="flex w-full">
+            <div className=" sm:w-full">
               <motion.div
-                className="h-full w-full"
+                className="h-fit sm:h-full w-full"
                 variants={isPc ? scrollAnimation : undefined}
               >
                 <Image
                   src="/assets/img-1.png"
-                  alt="VPN Illustrasi"
+                  alt="user"
                   quality={100}
                   width={612}
                   height={383}
@@ -113,7 +143,7 @@ const Hero = () => {
       </div>
 
       <div className="bg-yellow-400">
-        <div className="max-w-[1320px] mt-24 px-8 xl:px-16 mx-auto">
+        <div className="max-w-[1320px] sm:mt-24 px-8 xl:px-16 mx-auto">
           <div className="relative w-full flex">
             <ScrollAnimationWrapper className="rounded-lg w-full py-9 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-gray-100  z-10">
               <motion.div
@@ -122,12 +152,15 @@ const Hero = () => {
                 variants={scrollAnimation}
               >
                 <div className="text-black-600 text-center sm:text-2xl">
-                  <p className="inline sm:block pr-1">
-                    <span className="font-bold">HỌC IELTS</span> CÓ KẾ HOẠCH +
-                    CHIẾN THUẬT THÔNG MINH bạn sẽ tiến nhanh hơn x10
+                  <p className="mb-2 sm:mb-0 font-bold">
+                    DUY NHẤT TẠI WORKSHOP 5/1 NÀY!
                   </p>
-                  <p className="inline sm:block">
-                    so với việc 'tự bơi' không được ai hướng dẫn!
+                  <p className="">
+                    Cập nhật những thông tin mới nhất về về{' '}
+                    <span className="font-bold">kì thi IELTS 2025</span> từ IDP
+                    và những{' '}
+                    <span className="font-bold">chiến lược nâng band</span> hữu
+                    ích nhất!
                   </p>
                 </div>
               </motion.div>

@@ -20,7 +20,7 @@ const Testimoni = ({
     {
       name: 'Ms. Hà Linh',
       role: 'Quản lý cấp cao IDP Việt Nam',
-      image: '/assets/user2.png',
+      image: '/assets/user2.jpg',
       contents: [
         'Quản lý cao cấp bộ phận phát triển bài thi IELTS khu vực miền Bắc',
         'Hơn 10 năm kinh nghiệm trong lĩnh vực khảo thí quốc tế ',
@@ -30,7 +30,7 @@ const Testimoni = ({
     {
       name: 'Mr. Chuan Zhao',
       role: 'CEO ClassIn - thị trường Việt Nam',
-      image: '/assets/user3.png',
+      image: '/assets/user3.jpg',
       contents: [
         'Cựu Sinh viên Bắc Đại',
         'Kinh nghiệm du học sinh Mỹ',
