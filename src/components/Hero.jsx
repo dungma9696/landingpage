@@ -68,9 +68,15 @@ const Hero = () => {
               </p>
               <div className="text-black-500 mt-4 mb-6">
                 <p className="inline sm:block pr-1">
-                  Cán Mốc Điểm Cao ngay Quý I, II năm 2025 Cùng Chuyên gia cấp
-                  cao IDP và CEO ClassIn - Nền tảng học IELTS cùng AI số 1 tại
-                  Trung Quốc
+                  Cán Mốc Điểm Cao ngay{' '}
+                  <span className="change-color font-bold">
+                    Quý I, II năm 2025
+                  </span>{' '}
+                  Cùng Chuyên gia cấp cao{' '}
+                  <span className="change-color font-bold">
+                    IDP và CEO ClassIn
+                  </span>{' '}
+                  - Nền tảng học IELTS cùng AI số 1 tại Trung Quốc
                 </p>
                 {/* <p className="inline sm:block">
                   & Cựu SV Bắc Đạicho Học sinh, Sinh viên Việt Nam!
