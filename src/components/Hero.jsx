@@ -92,7 +92,7 @@ const Hero = () => {
                     className="!h-8 !w-auto sm:!h-10 "
                   />{' '}
                   <p className="text-black-500">
-                    8 - 10h tối CHỦ NHẬT, 05/01/2024
+                    8 - 10h tối THỨ 3, 07/01/2024
                   </p>
                 </div>
               </div>
@@ -159,7 +159,7 @@ const Hero = () => {
               >
                 <div className="text-black-600 text-center sm:text-2xl">
                   <p className="mb-2 sm:mb-0 font-bold">
-                    DUY NHẤT TẠI WORKSHOP 5/1 NÀY!
+                    DUY NHẤT TẠI WORKSHOP 7/1 NÀY!
                   </p>
                   <p className="">
                     Cập nhật những thông tin mới nhất về về{' '}
